@@ -6,17 +6,24 @@
 </head>
 <body>
     <p>
-        id="nome">computador;
+        id="nome">Bruno;
     </p>
     <p>
-        id="sobrenome">inteligente;
+        id="sobrenome">Edson;
     </p>
     <h1>
         id="nomecompleto"
     </h1>
         
         <script>
-            
+            var nome, sobrenome, nomecompleto;
+            nome= document.getElementById("nome");
+            sobrenome= document.getElementById("sobrenome");
+            nomecompleto= document.getElementById("nomecompleto");
+
+            tNome= nome.textContent;
+            tSobrenome= sobrenome.textContent;
+            nomecompleto.textContent="Bem vindo "+tNome+" "+tSobrenome+"!";
         
         </script>
 </body>
