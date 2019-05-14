@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Questão 15</title>
+    
+</head>
+<body>
+    <main>
+        <h1>Resultado da avaliação</h1>
+        
+        <p>Olá <span id="nome">Fulano</span>, você está matriulado há <span id="anos">2</span> anos no curso de </p>
+        confeitaria e as notas das suas disciplinas são: <span id="confeitaria">70</span> em confeitaria básica; 
+        <span id="coberturas">80</span> em oberturas e <span id="broas">60</span> em broas e bolos.
+
+        <p id="resultado"></p>
+
+        <button id="avaliar">Avaliar</button>
+        <button id="limpar">Limpar</button>
+
+        <p id="melhorias"></p>
+    
+    </main>
+
+    <script>
+        var nome, anos, confeitaria, coberturas, bolos, botaoAvaliar, botaoLimpar
+            resultado, melhorias, media;
+        
+        nome= document.getElementById("nome");
+        anos= document.getElementById("anos");
+        confeitaria= document.getElementById("confeitaria");
+        coberturas= document.getElementById("coberturas");
+        bolos= document.getElementById("coberturas");
+        botaoAvaliar=  document.getElementById("botaoAvaliar");
+        botaoLimpar=  document.getElementById("botaoLimpar");
+        resultado=  document.getElementById("resultado");
+        melhorias=  document.getElementById("melhorias");
+        media=  document.getElementById("media");
+
+        nome.contentEditable= true;
+        anos.contentEditable= true;
+        confeitaria.contentEditable= true;
+        coberturas.contentEditable= true;
+        bolos.contentEditable= true;
+        
+        botaoLimpar.addEventListener("click",limparClick);
+        botaoAvaliar.addEventListener("click",avaliarClick);
+
+        function limparClick() {
+                resultado.textContent= "";
+                melhorias.textContent= "";
+        }
+        
+        function avaliarClick() {
+                if (media >= 70)
+                    resultado.textContent= "Parabéns "+nome.textContent+"! Você está aprovado com média "+media+"!";
+            
+                else resultado.textContent= "Você foi aprovado com média "+media+"";
+        
+          
+                var nConfeitaria=Number(confeitaria.textContent);
+                var nCoberturas= Number(coberturas.textContent);
+                var nBolos= Number(bolos.textContent);
+                
+                media= (nConfeitaria+nCoberturas+nBolos)/3;
+
+                if(nConfeitaria < 60)
+                    melhorias.textContent= ""+nome.textContent+", considere estudar mais Confeitaria"
+                
+                if(nCoberturas < 60)
+                    melhorias.textContent= ""+nome.textContent+", considere estudar mais Coberturas"
+                    
+                if(nBolos < 60)
+                    melhorias.text.textContent= ""+nome.textContent+", considere estudar mais Broas e Bolos"
+                   
+            }
+   
+    </script>
+
+</body>
+</html>
