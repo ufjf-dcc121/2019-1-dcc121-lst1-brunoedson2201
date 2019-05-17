@@ -5,11 +5,11 @@
     <title>Questão 14</title>
 </head>
 <body>
-    <div id= "x">7  </div>;
-    <div id= "y">5 </div>;
-    <div id= "produto"> </div>;
-    <div id= "soma"> </div>;
-    <button id= "botão"> calcular </button>;
+    <div id= "x">7  </div>
+    <div id= "y">5 </div>
+    <div id= "produto"> </div>
+    <div id= "soma"> </div>
+    <button id= "botão"> Calcular </button>
 
         <script>
             var x, y, produto, soma, botão;
@@ -23,12 +23,12 @@
             y.contentEditable=true;
             botão.addEventListener("click", calcular);
                 
-                function calcular(){
-                    vx=parseInt(x.textContent);
-                    vy=parseInt(y.textContent);
+            function calcular(){
+                vx=parseInt(x.textContent);
+                vy=parseInt(y.textContent);
 
-                    produto.textContent= "O produto de "+vx+" e "+vy+" é "+(vx*vy)+" !";
-                    soma.textContent= "A soma de "+vx+" e "+vy+" é "+(vx+vy)+" !";
+                produto.textContent= "O produto de "+vx+" e "+vy+" é "+(vx*vy)+" !";
+                soma.textContent= "A soma de "+vx+" e "+vy+" é "+(vx+vy)+" !";
 
                 }
         </script>
